@@ -1,0 +1,13 @@
+autoDiscovery:
+  clusterName: your-cluster
+awsRegion: ap-southeast-1
+sslCertPath: /etc/kubernetes/pki/ca.crt
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 128Mi
+rbac:
+  create: true
