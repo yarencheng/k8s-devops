@@ -1,0 +1,11 @@
+clusterName: your-cluster-name
+autoDiscoverAwsRegion: true
+autoDiscoverAwsVpcID: true
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 128Mi
