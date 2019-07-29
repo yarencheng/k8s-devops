@@ -1,0 +1,11 @@
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 128Mi
+envVars:
+  SLACK_URL: "https://hooks.slack.com/services/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"
+  SLACK_USERNAME: "EKS `globalstox`"
+  SLACK_CHANNEL: "CLCAHBTQC"

@@ -1,0 +1,11 @@
+awsRegion: ap-southeast-1
+logGroupName: eks-globalstox
+rbac:
+  create: true
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi

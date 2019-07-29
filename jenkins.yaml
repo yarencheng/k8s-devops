@@ -1,0 +1,39 @@
+master:
+  adminPassword: '123456'
+  serviceType: NodePort
+  resources:
+    requests:
+      cpu: 300m
+      memory: 2024Mi
+    limits:
+      cpu: 1000m
+      memory: 2024Mi
+  ingress:
+    enabled: true
+    hostName: jenkins.globalstoxinternal.io
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:086274668591:certificate/e0f80b48-e698-43c4-b56e-4aa84074c014
+
+backup:
+  enabled: false
+  schedule: '*/1 * * * *'
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1024Mi
+    limits:
+      cpu: 1000m
+      memory: 1024Mi
+  env:
+  - name: AWS_DEFAULT_REGION
+    value: ap-southeast-1
+  - name: AWS_REGION
+    value: ap-southeast-1
+  - name: AWS_ACCESS_KEY_ID
+    value: AKIARIFS67AX5W2OHAPQ
+  - name: AWS_SECRET_ACCESS_KEY
+    value: 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
+  destination: s3://globalstox-jenkins-backup/
